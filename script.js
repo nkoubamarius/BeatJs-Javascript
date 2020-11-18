@@ -1,5 +1,4 @@
 /**
- * TODO: Complete triggerBeat() to play upon the press of a,s,d,f,g,h,j,k,l
  * TODO: Button pt1: Initialize color and element values
  * TODO: Button pt2: Set button color upon initialization | Initialize button in beats["65"]
  * TODO: Button pt3: Complete select function to set the color and shadow of button upon pressing
@@ -48,6 +47,10 @@ let beats = {
  * HINT: use the keyCode
  */
 triggerBeat = (event) => {
+    let keyCode=event.keyCode;
+    if(keyCode in beats){
+        beats[keyCode].beat.play();
+    }
 
 }
 
@@ -56,5 +59,5 @@ triggerBeat = (event) => {
  * HINT: Log the keyCode of the key
  */
 document.addEventListener('keydown', (event)=>{
-    console.log(event);
+    triggerBeat(event.keyCode);
 })
