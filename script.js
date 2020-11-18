@@ -1,5 +1,4 @@
 /**
- * TODO: Button pt1: Initialize color and element values
  * TODO: Button pt2: Set button color upon initialization | Initialize button in beats["65"]
  * TODO: Button pt3: Complete select function to set the color and shadow of button upon pressing
  * TODO: Button pt4: Call the select() function upon key press ;)
@@ -15,12 +14,15 @@
 let beats = {
     "65": {
         beat: new Beat("./assets/Piano Chord 331.mp3"),
+        button: new Button("#00fffe",65)
     },
     "83": {
         beat: new Beat("./assets/Piano Chord 209.mp3"),
+        button: new Button("#00fffe",65)
     },
     "68": {
         beat: new Beat("./assets/Piano Chord 208.mp3"),
+        button: new Button("#00fffe",65)
     },
     "70": {
         beat: new Beat("./assets/Drum Sticks Hit 3.mp3"),
@@ -50,6 +52,7 @@ triggerBeat = (event) => {
     let keyCode=event.keyCode;
     if(keyCode in beats){
         beats[keyCode].beat.play();
+        beats[keyCode].button.setButtonColorInHTML();
     }
 
 }
@@ -59,5 +62,5 @@ triggerBeat = (event) => {
  * HINT: Log the keyCode of the key
  */
 document.addEventListener('keydown', (event)=>{
-    triggerBeat(event.keyCode);
+    triggerBeat(event);
 })

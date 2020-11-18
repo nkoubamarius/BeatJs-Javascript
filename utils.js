@@ -21,12 +21,16 @@ class Beat {
  */
 class Button {
     constructor(color, keyCode){
+        this.color=color;
+        this.keyCode=keyCode;
+        this.element=document.getElementById(keyCode);
     }
 
     /**
      * Set the button color based on color specified
      */
     setButtonColorInHTML = () => {
+        this.element.style.border=`5px solid ${this.color}`;
     }
 
     /**
