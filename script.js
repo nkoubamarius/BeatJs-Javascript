@@ -18,11 +18,11 @@ let beats = {
     },
     "83": {
         beat: new Beat("./assets/Piano Chord 209.mp3"),
-        button: new Button("#00fffe",65)
+        button: new Button("#00fffe",83)
     },
     "68": {
         beat: new Beat("./assets/Piano Chord 208.mp3"),
-        button: new Button("#00fffe",65)
+        button: new Button("#00fffe",68)
     },
     "70": {
         beat: new Beat("./assets/Drum Sticks Hit 3.mp3"),
@@ -52,7 +52,7 @@ triggerBeat = (event) => {
     let keyCode=event.keyCode;
     if(keyCode in beats){
         beats[keyCode].beat.play();
-        beats[keyCode].button.setButtonColorInHTML();
+        beats[keyCode].button.select();
     }
 
 }
